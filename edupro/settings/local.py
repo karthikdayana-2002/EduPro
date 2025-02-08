@@ -29,6 +29,11 @@ DATABASES = {
             'NAME': '/tmp/%s.sqlite3' % str(uuid.uuid4()),
             'ENGINE': 'django.db.backends.sqlite3'
         }
+    },
+    'pynamodb': {
+        'ENGINE': 'pynamodb.connection.Connection',
+        'HOST': 'http://localhost:8000',
+        'REGION': os.getenv('DYNAMODB_REGION', 'us-west-2')
     }
 }
 

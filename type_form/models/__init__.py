@@ -7,8 +7,9 @@ from .formfieldresponse import FormFieldResponse
 from .formfieldsettings import FormFieldSettings
 from .workspace import Workspace
 from .workspaceinvite import WorkspaceInvite
+from .usermodel import UserModel
 
-__all__ = [User, Form, Field, FormResponse, FormField, FormFieldResponse, FormFieldSettings, Workspace, WorkspaceInvite]
+__all__ = [User, Form, Field, FormResponse, FormField, FormFieldResponse, FormFieldSettings, Workspace, WorkspaceInvite, UserModel]
 
 # class DummyModel(AbstractDateTimeModel):
 #     """

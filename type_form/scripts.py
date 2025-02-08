@@ -1,12 +1,10 @@
-from django.db import connection
+from type_form.models import UserModel
+import uuid
 
-def user():
-   def table_exists(type_form_formresponse):
-      with connection.cursor() as cursor:
-         tables = connection.introspection.table_names(cursor)
-         print(tables)
-         return type_form_formresponse in tables
-   if table_exists("type_form_formresponse"):
-      print("Table exists!")
-   else:
-      print("Table does not exist.")
+users = list(UserModel.scan(UserModel.email == "example@test.com"))
+
+if users:
+    for user in users:
+        print(f"User ID: {user.id}")
+else:
+    print("No users found with the given email.")
